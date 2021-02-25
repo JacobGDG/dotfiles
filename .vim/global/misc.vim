@@ -20,10 +20,9 @@ set ignorecase
 set smartcase
 " highlight all matches
 set hlsearch
+
 " Show command in bottom right portion of the screen
 set showcmd
-" show hiddedn tabs and characters
-set list
 
 " Force the cursor onto a new line after 80 characters
 set textwidth=80

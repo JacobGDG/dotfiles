@@ -7,10 +7,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
-
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+" Theme
+Plugin 'morhetz/gruvbox'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -23,6 +24,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'shumphrey/fugitive-gitlab.vim'
 
+
+Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/nerdcommenter'
@@ -38,6 +41,10 @@ Plugin 'vimwiki/vimwiki'
 
 " Asychronous Lint Enginer https://github.com/dense-analysis/ale
 Plugin 'dense-analysis/ale'
+
+" Fuzzy search
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

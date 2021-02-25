@@ -1,10 +1,10 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+source $HOME/.passwordsrc
 
 export EDITOR="vim"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH=$PATH:/usr/local/go/bin:~/bash-scripts
 
 # https://github.com/tmuxinator/tmuxinator#faq
 # ensure window names are kept when using tmuxinator
