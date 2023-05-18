@@ -3,6 +3,9 @@
 brew install neovim ripgrep tmux font-hack-nerd-font
 {{- else if eq .chezmoi.os "linux" -}}
 #!/bin/sh
-sudo apt install neovim ripgrep tmux
-{{- end -}}
+#sudo apt update
+#sudo apt upgrade
+sudo apt install neovim ripgrep tmux lastpass-cli
+{{ end }}
 
+lpass login {{ .lastpass_email }}
