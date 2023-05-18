@@ -1,0 +1,5 @@
+# misc
+alias la="ls -lAhp"
+alias whatport="lsof -i -P | grep"
+alias vim="nvim"
+alias vimdiff="vim $(git add -N . && git diff master --name-only | xargs)"
