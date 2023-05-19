@@ -1,0 +1,3 @@
+export OPENAI_API_KEY={{ (index (lastpass "OpenAI Key") 0).note.key | quote }}
+export GITHUB_TOKEN={{ (index (lastpass "Github PAC") 0).password | quote }}
+export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=$GITHUB_TOKEN
