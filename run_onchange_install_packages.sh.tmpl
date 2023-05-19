@@ -1,8 +1,8 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-brew install neovim ripgrep tmux font-hack-nerd-font
+brew install neovim ripgrep tmux font-hack-nerd-font zsh
 {{- else if eq .chezmoi.os "linux" -}}
 #!/bin/sh
-sudo apt install neovim ripgrep tmux
+sudo apt install neovim ripgrep tmux zsh
 {{- end -}}
 

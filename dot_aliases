@@ -1,4 +1,5 @@
 # misc
+alias vim="nvim"
 alias la="ls -lAhp"
 alias whatport="lsof -i -P | grep"
 alias vim="nvim"
