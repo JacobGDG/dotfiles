@@ -1,0 +1,5 @@
+{{- $lastpassemail := promptStringOnce . "lastpassemail" "What is your LastPass email?" -}}
+
+[data]
+  lastpass_email = {{ $lastpassemail | quote }}
+    
