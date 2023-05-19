@@ -14,9 +14,10 @@
   p-force = push --force-with-lease
   rbm = rebase -i master
   fooked =! git add . && git amend && git p-force
-  ls = !bash -c 'source ~/.zshenv && gitcheckout'
+  ls = !bash -c 'gitcheckout'
   alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   diffnames =! git diff-tree -r --no-commit-id --name-only $(git log -1 --format="%H") origin/master
+  cma = ! git add . && git cm
 [user]
   name = JacobGDG
   email = {{ (index (lastpass "Gmail") 0).username }}

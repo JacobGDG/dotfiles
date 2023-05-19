@@ -1,0 +1,30 @@
+#!/bin/bash
+
+function gitcheckout() {
+  local branches=()
+  local inverted_branches=()
+  local selected_branch
+
+  # Populate the array with the branches, sorted by last accessed
+  while IFS= read -r branch; do
+    branches+=("$branch")
+  done < <(git for-each-ref --sort=committerdate refs/heads/ --format='%(refname:short)')
+
+  # Prompt the user to select a branch
+  PS3="Select a branch: "
+  select branch in "${branches[@]}"; do
+    if [[ -n $branch ]]; then
+      selected_branch=$branch
+      break
+    fi
+  done
+
+  # Checkout the selected branch
+  if [[ -n $selected_branch ]]; then
+    git checkout "$selected_branch"
+  else
+    echo "No branch selected."
+  fi
+}
+
+gitcheckout
