@@ -32,9 +32,10 @@ fi
 [ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
 # source .aliases if it exists
 [ -f "$HOME/.aliases" ] && source $HOME/.aliases
+[ -f "$HOME/.aliases.local" ] && source $HOME/.aliases.local || touch $HOME/.aliases.local
 # source .zshenv if it exists, else create it
 [ -f "$HOME/.zshenv" ] && source $HOME/.zshenv || touch $HOME/.zshenv
-[ -f "$HOME/.zshenvold" ] && source $HOME/.zshenvold
+[ -f "$HOME/.zshenv.local" ] && source $HOME/.zshenv.local || touch $HOME/.zshenv.local
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
