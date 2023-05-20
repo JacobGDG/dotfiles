@@ -131,8 +131,8 @@ lua << EOF
 EOF
 noremap <silent> <leader>h :HopWord<CR>
 
-luafile $HOME/.config/nvim/lua/ruby-mark.lua
-au BufReadPost,BufNewFile *.rb lua SetRubyMark()
+luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
+au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
 
 " NERDTREE
 " map open NERDTree at current file

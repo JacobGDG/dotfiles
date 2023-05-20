@@ -1,4 +1,6 @@
 {{- $lastpassemail := promptStringOnce . "lastpassemail" "What is your LastPass email?" -}}
+{{- $p10k := promptBoolOnce . "p10k" "Want to use Powerlevel10k theme?" -}}
 
 [data]
   lastpass_email = {{ $lastpassemail | quote }}
+  has_p10k = {{ $p10k }}
