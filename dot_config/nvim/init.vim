@@ -71,8 +71,7 @@ nnoremap gb :ls<CR>:vertical sbuffer<Space>
 " https://github.com/junegunn/vim-plug
 " :PlugInstall
 call plug#begin()
-  Plug 'preservim/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'tpope/vim-vinegar'
 
   " Fuzzy search
   " Plug 'junegunn/fzf'
@@ -98,13 +97,7 @@ call plug#begin()
   Plug 'tpope/vim-rails'
 
   " Syntax highlighting for loads of languages
-  Plug 'sheerun/vim-polyglot'
-
-  " Terraform plugin
-  Plug 'hashivim/vim-terraform'
-
-  " Markdown plugin
-  Plug 'iamcco/markdown-preview.nvim'
+  " Plug 'sheerun/vim-polyglot'
 
   " Quick nav :HopWord
   Plug 'phaazon/hop.nvim'
@@ -134,16 +127,6 @@ noremap <silent> <leader>h :HopWord<CR>
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
 au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
 
-" NERDTREE
-" map open NERDTree at current file
-map <C-f> :NERDTreeFind<CR>
-" toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-" close NERDTree when opening a file
-let NERDTreeQuitOnOpen = 1
-let NERDTreeShowHidden = 1
-
 " FZF
 " \/ for grep
 " noremap <leader>/ :Ag<CR>
@@ -168,3 +151,4 @@ noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 
 nnoremap <leader>gb :GBrowse<CR>
 nnoremap <leader>gbb :.GBrowse<CR>
+nnoremap <leader>\ :Explore<CR>
