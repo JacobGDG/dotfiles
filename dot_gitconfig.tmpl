@@ -18,6 +18,10 @@
   alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   diffnames =! git diff-tree -r --no-commit-id --name-only $(git log -1 --format="%H") origin/master
   cma = ! git add . && git cm
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+  unhide-all = update-index --really-refresh
+  hidden = !git ls-files -v | grep \"^[a-z]\"
 [user]
   name = JacobGDG
   email = {{ (index (lastpass "Gmail") 0).username }}
