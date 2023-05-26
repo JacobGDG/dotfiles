@@ -150,3 +150,4 @@ noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 nnoremap <leader>gb :GBrowse<CR>
 nnoremap <leader>gbb :.GBrowse<CR>
 nnoremap <leader>\ :Explore<CR>
+nnoremap <leader>v :Vexplore<CR>
