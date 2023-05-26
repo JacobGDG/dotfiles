@@ -102,6 +102,8 @@ call plug#begin()
   Plug 'MunifTanjim/nui.nvim'
   Plug 'jackMort/ChatGPT.nvim'
 
+  Plug 'neovim/nvim-lspconfig'
+
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 " ---------------- PLUGIN CONFIG
@@ -120,6 +122,9 @@ noremap <silent> <leader>h :HopWord<CR>
 
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
 au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
+
+" ---------------- LSP
+luafile $HOME/.config/nvim/plugins/lsp.lua
 
 " FZF
 " \/ for grep
