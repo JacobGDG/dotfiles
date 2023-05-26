@@ -96,17 +96,13 @@ call plug#begin()
 
   Plug 'tpope/vim-rails'
 
-  " Syntax highlighting for loads of languages
-  " Plug 'sheerun/vim-polyglot'
-
   " Quick nav :HopWord
   Plug 'phaazon/hop.nvim'
 
-  " nvim-lua/plenary.nvim
-  " nvim-telescope/telescope.nvim
   Plug 'MunifTanjim/nui.nvim'
   Plug 'jackMort/ChatGPT.nvim'
 
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
@@ -126,6 +122,8 @@ noremap <silent> <leader>h :HopWord<CR>
 
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
 au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
+
+luafile $HOME/.config/nvim/plugins/nvim-treesitter.lua
 
 " FZF
 " \/ for grep
