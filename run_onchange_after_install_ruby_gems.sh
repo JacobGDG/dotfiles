@@ -4,4 +4,4 @@
 rvm install ruby-3
 rvm use ruby-3
 
-gem install ruby-lsp
+gem install solargraph
