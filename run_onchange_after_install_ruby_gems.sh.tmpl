@@ -1,0 +1,19 @@
+#!/bin/sh
+
+{{- if (and (.has_ruby) (eq .chezmoi.os "darwin")) }} 
+
+brew install rbenv ruby-build
+
+{{- else if (and (.has_ruby) (eq .chezmoi.os "linux")) }} 
+
+sudo apt remove ruby
+
+sudo apt install rbenv ruby-dev
+
+{{- end }}
+{{- if .has_ruby }}
+
+echo {{ .gem_home }}
+gem install solargraph
+
+{{- end }}
