@@ -13,7 +13,9 @@ sudo apt install rbenv ruby-dev
 {{- end }}
 {{- if .has_ruby }}
 
-echo {{ .gem_home }}
+rbenv install {{ .ruby_version }}
+rbenv global {{ .ruby_version }}
+
 gem install solargraph
 
 {{- end }}
