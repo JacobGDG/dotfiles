@@ -43,6 +43,7 @@ cmp.setup({
   -- Installed sources:
   sources = {
     { name = 'nvim_lsp', keyword_length = 3 },      -- from language server
+    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
     { name = 'calc'},                               -- source for math calculation
   },
   window = {
@@ -54,7 +55,7 @@ cmp.setup({
       format = function(entry, item)
           local menu_icon ={
               nvim_lsp = 'λ',
-              -- vsnip = '⋗',
+              vsnip = '⋗',
               -- buffer = 'Ω',
               -- path = '🖫',
           }

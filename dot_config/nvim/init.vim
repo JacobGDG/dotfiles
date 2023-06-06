@@ -110,6 +110,8 @@ call plug#begin()
 
   Plug 'hrsh7th/nvim-cmp' 
   Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
 
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
@@ -124,6 +126,39 @@ require'hop'.setup()
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+-- LSP Diagnostics Options Setup 
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
+
+sign({name = 'DiagnosticSignError', text = ''})
+sign({name = 'DiagnosticSignWarn', text = ''})
+sign({name = 'DiagnosticSignHint', text = ''})
+sign({name = 'DiagnosticSignInfo', text = ''})
+
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    update_in_insert = true,
+    underline = true,
+    severity_sort = false,
+    float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
+})
+
+vim.cmd([[
+set signcolumn=yes
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]])
 EOF
 
 noremap <silent> <leader>h :HopWord<CR>
@@ -131,8 +166,9 @@ noremap <silent> <leader>h :HopWord<CR>
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
 au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
 
-" ---------------- LSP
-luafile $HOME/.config/nvim/plugins/lsp.lua
+" ---------------- LSP CONFIG
+luafile $HOME/.config/nvim/plugins/cmp.lua
+luafile $HOME/.config/nvim/plugins/rust-tools.lua
 
 " Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
