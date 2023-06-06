@@ -71,6 +71,7 @@ nnoremap gb :ls<CR>:vertical sbuffer<Space>
 " https://github.com/junegunn/vim-plug
 " :PlugInstall
 call plug#begin()
+  " improvents for Netrw
   Plug 'tpope/vim-vinegar'
 
   " Fuzzy search
@@ -102,7 +103,13 @@ call plug#begin()
   Plug 'MunifTanjim/nui.nvim'
   Plug 'jackMort/ChatGPT.nvim'
 
+  Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+  Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'simrat39/rust-tools.nvim'
+
+  Plug 'hrsh7th/nvim-cmp' 
+  Plug 'hrsh7th/cmp-nvim-lsp'
 
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
@@ -114,10 +121,11 @@ require("lualine").setup {
 }
 require("chatgpt").setup()
 require'hop'.setup()
+
+require("mason").setup()
+require("mason-lspconfig").setup()
 EOF
 
-lua << EOF
-EOF
 noremap <silent> <leader>h :HopWord<CR>
 
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
@@ -125,12 +133,6 @@ au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
 
 " ---------------- LSP
 luafile $HOME/.config/nvim/plugins/lsp.lua
-
-" FZF
-" \/ for grep
-" noremap <leader>/ :Ag<CR>
-" set rtp+=~/.fzf
-" nnoremap ff :FZF<CR>
 
 " Telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>

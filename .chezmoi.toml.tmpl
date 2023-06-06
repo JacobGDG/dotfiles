@@ -1,10 +1,6 @@
 {{- $lastpassemail := promptStringOnce . "lastpassemail" "What is your LastPass email?" -}}
 {{- $p10k := promptBoolOnce . "p10k" "Want to use Powerlevel10k theme? [y,t,n,f]" -}}
-{{- $has_ruby := promptBoolOnce . "has_ruby" "Want to install ruby support? [y,t,n,f]" -}}
 
 [data]
   lastpass_email = {{ $lastpassemail | quote }}
   has_p10k = {{ $p10k }}
-  has_ruby = {{ $has_ruby }}
-  gem_home = "$HOME/.gem"
-  ruby_version = "3.2.2"
