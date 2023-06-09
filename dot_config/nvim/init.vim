@@ -63,8 +63,6 @@ nnoremap S diwh"0p
 " no more pesky escape (for insert and visual mode)
 imap kj <Esc>:w<CR>
 
-" list buffer, pick the number jump to
-nnoremap gb :ls<CR>:vertical sbuffer<Space>
 
 " ---------------- PLUGIN MANAGER
 
@@ -168,15 +166,21 @@ noremap <silent> <leader>h :HopWord<CR>
 luafile $HOME/.config/nvim/lua/skip-top-comments-ruby.lua
 au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
 
-" ---------------- LSP CONFIG
+luafile $HOME/.config/nvim/plugins/telescope.lua
+
+" ---------------- LSP CONFIG "
 luafile $HOME/.config/nvim/plugins/cmp.lua
 luafile $HOME/.config/nvim/plugins/rust-tools.lua
 
-" Telescope
-nnoremap <leader>\ <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
+" Telescope "
+nnoremap ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap frc <cmd>lua require('telescope.builtin').find_files({ default_text="controllers/" })<cr>
+nnoremap frs <cmd>lua require('telescope.builtin').find_files({ default_text="spec/" })<cr>
+nnoremap frm <cmd>lua require('telescope.builtin').find_files({ default_text="models/" })<cr>
 
-" THEME
+" THEME "
 set t_Co=256
 set background=dark
 colorscheme gruvbox
