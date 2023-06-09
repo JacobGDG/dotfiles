@@ -1,6 +1,5 @@
 " --------------- GENERAL
 
-set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
 set ignorecase              " case insensitive
 set smartcase               " case sensitive if capital
@@ -20,7 +19,7 @@ set hidden                  " allow unsaved buffers to be hidden
 
 set number relativenumber   " add line numbers
 set cursorline              " highlight current cursorline
-set cc=120                  " set an 80 column border for good coding style
+set cc=120                  " set an 120 column border for good coding style
 " toggle relative number on insert and focus
 :augroup numbertoggle
 :  autocmd!
@@ -44,7 +43,7 @@ noremap <Right> <nop>
 
 set re=0                    " https://dev.to/ronenlaufer/comment/1d702
 
-set directory=$HOME/.vim/swapfiles//  " Store .swp files outside of working directories (easy git)
+set directory=$HOME/.config/nvim/swapfiles//  " Store .swp files outside of working directories (easy git)
 
 " --------------- gitcommit specifics
 
@@ -58,7 +57,7 @@ autocmd FileType gitcommit set spell
 noremap <silent> <leader>yp :let @+=substitute(@%, '^.*/src/[^/]\+/', '', '')<CR>
 
 " replace word with last yank 'Stamp'
-nnoremap S diwh"0p
+nnoremap S "_diwP
 
 " no more pesky escape (for insert and visual mode)
 imap kj <Esc>:w<CR>
