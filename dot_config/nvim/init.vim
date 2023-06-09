@@ -113,6 +113,8 @@ call plug#begin()
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
+  Plug 'slim-template/vim-slim'
+
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 " ---------------- PLUGIN CONFIG
@@ -171,8 +173,8 @@ luafile $HOME/.config/nvim/plugins/cmp.lua
 luafile $HOME/.config/nvim/plugins/rust-tools.lua
 
 " Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>\ <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 
 " THEME
 set t_Co=256
@@ -188,5 +190,4 @@ noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 
 nnoremap <leader>gb :GBrowse<CR>
 nnoremap <leader>gbb :.GBrowse<CR>
-nnoremap <leader>\ :Explore<CR>
 nnoremap <leader>v :Vexplore<CR>
