@@ -1,6 +1,8 @@
 {{- $lastpassemail := promptStringOnce . "lastpassemail" "What is your LastPass email?" -}}
 {{- $p10k := promptBoolOnce . "p10k" "Want to use Powerlevel10k theme? [y,t,n,f]" -}}
+{{- $homevpn := promptBoolOnce . "homevpn" "Want to vpn into your home network [y,t,n,f]" -}}
 
 [data]
   lastpass_email = {{ $lastpassemail | quote }}
   has_p10k = {{ $p10k }}
+  home_vpn = {{ $homevpn }}
