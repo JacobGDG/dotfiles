@@ -1,0 +1,13 @@
+if [ "$1" = "disconnect" ]; then
+    echo "Disconnecting from home_vpn"
+    wg-quick down home_vpn
+elif [ "$1" = "connect" ]; then
+    echo "Connecting to home_vpn"
+    wg-quick up home_vpn
+else
+    echo "Invalid argument, must pass either connect or disconnect"
+    echo "Usage: home_vpn.sh [connect|disconnect]"
+    exit 1
+fi
+
+
