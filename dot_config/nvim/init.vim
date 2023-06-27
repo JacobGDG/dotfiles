@@ -124,12 +124,12 @@ luafile $HOME/.config/nvim/plugins/cmp.lua
 luafile $HOME/.config/nvim/plugins/rust-tools.lua
 
 " Telescope "
-nnoremap ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap frc <cmd>lua require('telescope.builtin').find_files({ default_text="controllers/" })<cr>
-nnoremap frs <cmd>lua require('telescope.builtin').find_files({ default_text="spec/" })<cr>
-nnoremap frm <cmd>lua require('telescope.builtin').find_files({ default_text="models/" })<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>frc <cmd>lua require('telescope.builtin').find_files({ default_text="controllers/" })<cr>
+nnoremap <leader>frs <cmd>lua require('telescope.builtin').find_files({ default_text="spec/" })<cr>
+nnoremap <leader>frm <cmd>lua require('telescope.builtin').find_files({ default_text="models/" })<cr>
 
 " THEME "
 set t_Co=256
