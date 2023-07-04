@@ -1,11 +1,5 @@
 runtime the_basics.vim
 
-" --------------- gitcommit specifics
-
-autocmd FileType gitcommit set textwidth=72
-autocmd FileType gitcommit set colorcolumn+=51
-autocmd FileType gitcommit set spell
-
 " --------------- MAPPINGS
 
 " copy current file path to system clipboard
@@ -58,13 +52,13 @@ call plug#begin()
   Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
   Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'neovim/nvim-lspconfig'
-  Plug 'simrat39/rust-tools.nvim'
 
   Plug 'hrsh7th/nvim-cmp' 
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
+  Plug 'dense-analysis/ale'
   Plug 'slim-template/vim-slim'
 
   Plug 'nvim-tree/nvim-web-devicons'
@@ -109,6 +103,10 @@ vim.diagnostic.config({
     },
 })
 
+require("mason-lspconfig").setup {
+    ensure_installed = { "rust_analyzer" },
+}
+
 EOF
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
@@ -121,7 +119,6 @@ luafile $HOME/.config/nvim/plugins/telescope.lua
 
 " ---------------- LSP CONFIG "
 luafile $HOME/.config/nvim/plugins/cmp.lua
-luafile $HOME/.config/nvim/plugins/rust-tools.lua
 
 " Telescope "
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
