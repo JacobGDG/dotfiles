@@ -46,3 +46,14 @@ set re=0                    " https://dev.to/ronenlaufer/comment/1d702
 
 set directory=$HOME/.config/nvim/swapfiles//  " Store .swp files outside of working directories (easy git)
 
+
+" copy current file path to system clipboard
+noremap <silent> <leader>yp :let @+=substitute(@%, '^.*/src/[^/]\+/', '', '')<CR>
+
+" replace word with last yank 'Stamp'
+nnoremap S "_diwP
+
+" no more pesky escape (for insert and visual mode)
+imap kj <Esc>:w<CR>
+
+
