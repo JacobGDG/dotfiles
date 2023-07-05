@@ -1,15 +1,21 @@
 {{ if .home_vpn }}
+
 if [ "$1" = "disconnect" ] || [ "$1" = "d" ]; then
     echo "Disconnecting from home_vpn"
+
     wg-quick down $HOME/.config/wireguard/home_vpn.conf
 elif [ "$1" = "connect" ] || [ "$1" = "c" ]; then
     echo "Connecting to home_vpn"
+
     wg-quick up $HOME/.config/wireguard/home_vpn.conf
 else
     echo "Invalid argument, must pass either connect or disconnect"
     echo "Usage: home_vpn.sh [connect|c|disconnect|d]"
     exit 1
 fi
+
+echo "Your current IP address is: $(curl -s ipv4.icanhazip.com)"
+
 {{ else }}
 echo "home_vpn is not configured"
 {{ end }}
