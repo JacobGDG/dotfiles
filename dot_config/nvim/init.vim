@@ -95,4 +95,4 @@ require("mason-lspconfig").setup {
 EOF
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
-au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
+" au BufReadPost,BufNewFile *.rb lua SkipTopCommentsRuby()
