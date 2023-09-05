@@ -34,17 +34,19 @@ call plug#begin()
   Plug 'MunifTanjim/nui.nvim'
   Plug 'jackMort/ChatGPT.nvim'
 
+  " Syntax highlighting
+  Plug 'sheerun/vim-polyglot'
+
+  " LSP
   Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
   Plug 'williamboman/mason-lspconfig.nvim'
   Plug 'neovim/nvim-lspconfig'
 
-  Plug 'hrsh7th/nvim-cmp' 
+  " Autocomplete
   Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
-
-  Plug 'dense-analysis/ale'
-  Plug 'slim-template/vim-slim'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
 
   Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
@@ -89,7 +91,7 @@ vim.diagnostic.config({
 })
 
 require("mason-lspconfig").setup {
-    ensure_installed = { "rust_analyzer" },
+    ensure_installed = { },
 }
 
 EOF

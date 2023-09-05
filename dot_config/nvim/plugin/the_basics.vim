@@ -33,7 +33,6 @@ set showcmd                 " show last command, bottom right
 set wildmode=longest,list   " get bash-like tab completions
 filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
-filetype plugin on
 set ttyfast                 " Speed up scrolling in Vim
 
 " no arrow keys you
@@ -42,10 +41,7 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-set re=0                    " https://dev.to/ronenlaufer/comment/1d702
-
 set directory=$HOME/.config/nvim/swapfiles//  " Store .swp files outside of working directories (easy git)
-
 
 " copy current file path to system clipboard
 noremap <silent> <leader>yp :let @+=substitute(@%, '^.*/src/[^/]\+/', '', '')<CR>
@@ -55,5 +51,3 @@ nnoremap S "_diwP
 
 " no more pesky escape (for insert and visual mode)
 imap kj <Esc>:w<CR>
-
-
