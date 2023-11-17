@@ -1,0 +1,12 @@
+# /Users/jakegreenwood/.config/tmuxinator/vimsplit.yml
+
+name: <%= @args[0] %>
+root: ~/src/<%= @args[0] %>
+
+windows:
+  - editor:
+      layout: 311d,365x82,0,0[365x57,0,0,15,365x24,0,58,17]
+      panes:
+        - sleep 1 && vim
+        - 
+  - alt:

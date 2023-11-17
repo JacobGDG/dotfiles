@@ -3,3 +3,5 @@ export GITHUB_TOKEN={{ (index (lastpass "Github PAC") 0).password | quote }}
 export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=$GITHUB_TOKEN
 
 export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
+
+export $TMUXINATOR_CONFIG=$HOME/.config/tmuxinator
