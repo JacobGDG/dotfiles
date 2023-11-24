@@ -9,7 +9,7 @@ call plug#begin()
   " Plug 'junegunn/fzf'
   " Plug 'junegunn/fzf.vim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
   " Theme
   Plug 'morhetz/gruvbox'
