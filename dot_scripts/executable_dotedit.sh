@@ -37,18 +37,24 @@ clear
 
 chezmoi edit
 
-# ask if you would like to apply changes
-read -p "Apply changes? (y/n) " -n 1 -r
+# check for any changes in chezmoi
+if [[ $(chezmoi diff) != "" ]]; then
+  # ask if you would like to apply changes
+  read -p "Apply changes? (y/n) " -n 1 -r
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  clear
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    clear
 
-  echo "Applying changes..."
+    echo "Applying changes..."
 
-  chezmoi apply -v
+    chezmoi apply -v
 
-  # wait for user to read output
-  read -p "Press any key to continue... " -n 1 -r
+    # wait for user to read output
+    read -p "Press any key to continue... " -n 1 -r
+  fi
+else
+  echo "Nothing to apply. Continuing..."
+  sleep 1
 fi
 
 clear
@@ -56,6 +62,7 @@ clear
 # check for any changes and exit if none
 if [[ $(chezmoi git -- status) == *"nothing to commit, working tree clean"* ]]; then
   echo "No changes to commit."
+  echo "Exiting..."
   sleep 1
   exit 0
 fi
