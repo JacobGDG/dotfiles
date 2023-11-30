@@ -6,10 +6,9 @@ call plug#begin()
   Plug 'tpope/vim-vinegar'
 
   " Fuzzy search
-  " Plug 'junegunn/fzf'
-  " Plug 'junegunn/fzf.vim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
   " Theme
   Plug 'morhetz/gruvbox'
