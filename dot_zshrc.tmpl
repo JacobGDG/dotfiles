@@ -28,7 +28,9 @@ if [ -f "$ZSH/oh-my-zsh.sh" ]; then
     {{ else }}
     ZSH_THEME="bira"
     {{ end }}
+    DISABLE_AUTO_UPDATE=true
     source $ZSH/oh-my-zsh.sh
+    unset DISABLE_AUTO_UPDATE
 fi
 
 # source .cargo/env if it exists
