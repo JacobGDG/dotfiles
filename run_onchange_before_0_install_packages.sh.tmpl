@@ -5,7 +5,18 @@ brew install neovim ripgrep tmux font-hack-nerd-font zsh gnupg tmuxinator
 {{ else if eq .chezmoi.os "linux" }}
 sudo apt update
 sudo apt upgrade
-sudo apt install neovim ripgrep tmux zsh lastpass-cli
+
+# libevent-dev is needed for tmux
+sudo apt install neovim ripgrep zsh lastpass-cli libevent-dev
+
+# tmux
+cd ~/.tmux
+sh autogen.sh
+./configure
+make && sudo make install
+
+cd ~
+
 {{ if .home_vpn }}
 sudo apt install wireguard
 {{ end }}
