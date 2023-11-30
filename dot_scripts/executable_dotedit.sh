@@ -11,10 +11,8 @@ fi
 
 echo "Looking for changes upstream..."
 
-# check for changes upstream
 chezmoi git -- fetch
 
-# if changes, ask to pull and apply first
 if [[ $(chezmoi git -- status) == *"Your branch is behind"* ]]; then
   clear
 
@@ -39,7 +37,6 @@ chezmoi edit
 
 # check for any changes in chezmoi
 if [[ $(chezmoi diff) != "" ]]; then
-  # ask if you would like to apply changes
   read -p "Apply changes? (y/n) " -n 1 -r
 
   if [[ $REPLY =~ ^[Yy]$ ]]; then
