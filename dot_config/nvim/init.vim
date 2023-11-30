@@ -8,7 +8,6 @@ call plug#begin()
   " Fuzzy search
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
   " Theme
   Plug 'morhetz/gruvbox'
