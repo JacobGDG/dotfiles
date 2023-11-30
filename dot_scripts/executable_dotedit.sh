@@ -9,6 +9,32 @@ if [ "$1" == "start" ]; then
   exit 0
 fi
 
+echo "Looking for changes upstream..."
+
+# check for changes upstream
+chezmoi git -- fetch
+
+# if changes, ask to pull and apply first
+if [[ $(chezmoi git -- status) == *"Your branch is behind"* ]]; then
+  clear
+
+  echo "Changes upstream. You should pull and apply them first. Run:"
+  echo ""
+  echo "chezmoi git -- pull"
+  echo "chezmoi apply -v"
+  echo ""
+  echo "Press any key to continue... "
+
+  read -n 1 -r
+
+  exit 1
+fi
+
+echo "All clear. Continuing..."
+sleep 1
+
+clear
+
 chezmoi edit
 
 # ask if you would like to apply changes
@@ -26,6 +52,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 clear
+
+# check for any changes and exit if none
+if [[ $(chezmoi git -- status) == *"nothing to commit, working tree clean"* ]]; then
+  echo "No changes to commit."
+  sleep 1
+  exit 0
+fi
 
 chezmoi git -- status
 
@@ -46,5 +79,3 @@ echo "Exiting..."
 sleep 1
 
 exit 0
-
-
