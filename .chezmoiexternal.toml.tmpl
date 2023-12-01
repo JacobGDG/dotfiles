@@ -1,13 +1,9 @@
-[".oh-my-zsh"]
-  type = "archive"
-  url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
-  stripComponents = 1
-  refreshPeriod = "168h"
 [".tmux"]
   type = "git-repo"
   url = "https://github.com/tmux/tmux.git"
 {{ if .has_p10k }}
-[".oh-my-zsh/custom/themes/powerlevel10k"]
+[".p10k"]
   type = "git-repo"
   url = "https://github.com/romkatv/powerlevel10k.git"
+  depth = 1
 {{ end }}
