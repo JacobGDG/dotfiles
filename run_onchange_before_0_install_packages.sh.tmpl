@@ -1,19 +1,23 @@
 #!/bin/sh
 
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" }}
 brew install neovim ripgrep tmux font-hack-nerd-font zsh gnupg tmuxinator
 {{ else if eq .chezmoi.os "linux" }}
 sudo apt update
 sudo apt upgrade
 
 # libevent-dev is needed for tmux
-sudo apt install neovim ripgrep zsh lastpass-cli libevent-dev
+sudo apt install neovim ripgrep zsh libevent-dev
 
 # tmux
 cd ~/.tmux
 sh autogen.sh
 ./configure
 make && sudo make install
+
+# lastpass-cli
+cd ~/.lastpass-cli
+sudo make install
 
 cd ~
 

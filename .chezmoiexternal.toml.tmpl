@@ -1,6 +1,11 @@
+{{ if eq .chezmoi.os "linux" }}
 [".tmux"]
   type = "git-repo"
   url = "https://github.com/tmux/tmux.git"
+[".lastpass-cli"]
+  type = "git-repo"
+  url = "https://github.com/LastPass/lastpass-cli.git"
+{{ end }}
 {{ if .has_p10k }}
 [".p10k"]
   type = "git-repo"
