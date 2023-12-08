@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# if param "completion" is passed then return possible completions
+if [ "$1" == "shortlist" ]; then
+    find $HOME/src -maxdepth 2 -type d | sed 's|.*/src||g' | sed 's|^/||g' | xargs echo
+    exit 0
+fi
+
+tmuxinator vimsplit $1

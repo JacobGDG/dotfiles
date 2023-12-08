@@ -41,6 +41,8 @@ setopt PUSHD_MINUS                 # exchange the meanings of '+' and '-'
 setopt CDABLE_VARS                 # expand the expression (allows 'cd -2/tmp')
 autoload -U compinit && compinit   # load + start completion
 
+source $HOME/.scripts/completion.sh
+
 {{ if .has_p10k }}
 source ~/.p10k/powerlevel10k.zsh-theme
 
