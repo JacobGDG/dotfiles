@@ -19,6 +19,7 @@
   amend = commit --amend -C HEAD
   p-force = push --force-with-lease
   fooked =! git add . && git amend && git p-force
+  resetorigin = !git fetch origin && git reset --hard @{u} && git clean -f -d
 
   ls = !bash -c 'gitcheckout'
   pretty = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
