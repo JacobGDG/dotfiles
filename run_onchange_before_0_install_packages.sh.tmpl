@@ -1,6 +1,8 @@
 #!/bin/sh
 
 {{ if eq .chezmoi.os "darwin" }}
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 brew install neovim ripgrep tmux font-hack-nerd-font zsh gnupg tmuxinator
 {{ else if eq .chezmoi.os "linux" }}
 sudo apt update

@@ -9,6 +9,8 @@ if [ "$1" == "start" ]; then
   exit 0
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 echo "Looking for changes upstream..."
 
 chezmoi git -- fetch

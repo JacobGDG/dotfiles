@@ -2,4 +2,5 @@
 
 # hash of init.vim {{ include "dot_config/nvim/init.vim" | sha256sum }}
 
-nvim --headless +'PlugInstall --sync' +PlugUpdate +qall
+# neovim
+nvim -es -u $HOME/.config/nvim/init.vim -i NONE -c "PlugInstall" -c "qa" -v

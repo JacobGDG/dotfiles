@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "shortlist" ]; then
-    find $HOME/src -maxdepth 2 -type d | sed 's|.*/src||g' | sed 's|^/||g' | xargs echo
+    find $HOME/dev -maxdepth 2 -type d | sed 's|.*/dev||g' | sed 's|^/||g' | xargs echo
     exit 0
 fi
 
