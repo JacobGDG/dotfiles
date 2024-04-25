@@ -7,3 +7,4 @@ alias mux="tmuxinator"
 
 alias dotedit="~/.scripts/dotedit.sh start"
 
+alias k="kubectl"
