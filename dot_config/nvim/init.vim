@@ -53,6 +53,8 @@ call plug#begin()
   Plug 'hrsh7th/nvim-cmp'
 
   Plug 'nvim-tree/nvim-web-devicons'
+
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 " ---------------- PLUGIN CONFIG
 
