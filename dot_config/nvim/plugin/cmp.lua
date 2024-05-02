@@ -42,10 +42,11 @@ cmp.setup({
   },
   -- Installed sources:
   sources = {
-    { name = "nvim_lsp", keyword_length = 3 },      -- from language server
+    { name = "copilot", },
+    { name = "nvim_lsp", },      -- from language server
+    { name = "buffer", },        -- nvim-cmp source for buffer words
+    { name = "path", },          -- nvim-cmp source for path
     -- { name = "vsnip", keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
-    { name = "buffer", keyword_length = 3 },        -- nvim-cmp source for buffer words
-    { name = "path", keyword_length = 3 },          -- nvim-cmp source for path
   },
   window = {
       completion = cmp.config.window.bordered(),
