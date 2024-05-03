@@ -5,3 +5,6 @@ import = [
 [shell]
 program = "/bin/zsh"
 args = [ "-l", "-c", "tmux attach || tmux" ]
+
+[font]
+normal = { family = "Hack Nerd Font Mono" }

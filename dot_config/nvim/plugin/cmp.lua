@@ -56,10 +56,11 @@ cmp.setup({
       fields = {"menu", "abbr", "kind"},
       format = function(entry, item)
           local menu_icon ={
-              nvim_lsp = "λ",
+              nvim_lsp = "",
               -- vsnip = "⋗",
-              buffer = "Ω",
-              path = "🖫",
+              buffer = "",
+              path = "",
+              copilot = "",
           }
           item.menu = menu_icon[entry.source.name]
           return item
