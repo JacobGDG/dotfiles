@@ -77,7 +77,7 @@ require("lazy").setup(
       config = function ()
         require("copilot_cmp").setup()
       end
-    }
+    },
 
     -- break repeated key presses to learn motions :Hardtime toggle
     {
