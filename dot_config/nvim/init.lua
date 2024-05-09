@@ -78,6 +78,14 @@ require("lazy").setup(
         require("copilot_cmp").setup()
       end
     }
+
+    -- break repeated key presses to learn motions :Hardtime toggle
+    {
+	    "m4xshen/hardtime.nvim",
+	    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	    opts = {}
+    },
+
   },
   {}
   )
