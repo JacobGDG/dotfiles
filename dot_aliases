@@ -10,3 +10,5 @@ alias dotedit="~/.scripts/dotedit.sh start"
 alias k="kubectl"
 
 alias yq="~/.scripts/yaml2json.sh | jq"
+
+alias vs="vimsplit"
