@@ -75,7 +75,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
   echo "Pushing changes..."
 
-  chezmoi git -- cma
+  chezmoi git -- cm -a
   chezmoi git -- push
 fi
 
