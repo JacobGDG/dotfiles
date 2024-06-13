@@ -12,3 +12,15 @@ alias k="kubectl"
 alias yq="~/.scripts/yaml2json.sh | jq"
 
 alias vs="vimsplit"
+
+if ! command -v pbcopy &> /dev/null
+then
+    alias pbcopy="xclip -selection clipboard"
+fi
+
+if ! command -v pbpaste &> /dev/null
+then
+    alias pbpaste="xclip -selection clipboard -o"
+fi
+
+

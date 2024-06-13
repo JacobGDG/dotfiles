@@ -1,13 +1,18 @@
 {{ if eq .chezmoi.os "linux" }}
-[".tmux"]
-  type = "git-repo"
-  url = "https://github.com/tmux/tmux.git"
-[".lastpass-cli"]
+["ext_src/lastpass-cli"]
   type = "git-repo"
   url = "https://github.com/LastPass/lastpass-cli.git"
+  depth = 1
+["ext_src/alacritty"]
+  type = "git-repo"
+  url = "https://github.com/alacritty/alacritty"
+  depth = 1
+["ext_src/nvim"]
+  type = "archive"
+  url = "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
 {{ end }}
 {{ if .has_p10k }}
-[".p10k"]
+["ext_src/powerlevel10k"]
   type = "git-repo"
   url = "https://github.com/romkatv/powerlevel10k.git"
   depth = 1
