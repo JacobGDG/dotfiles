@@ -1,6 +1,6 @@
 # misc
 alias vim="nvim"
-alias la="ls -lAhp"
+alias la="ls -lAhp --color=auto"
 alias whatport="lsof -i -P | grep"
 alias vimgitdiff="vim \$(git add -N . && git diff master --name-only | xargs)"
 alias mux="tmuxinator"
