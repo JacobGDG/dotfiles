@@ -11,9 +11,3 @@
   type = "archive"
   url = "https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
 {{ end }}
-{{ if .has_p10k }}
-["ext_src/powerlevel10k"]
-  type = "git-repo"
-  url = "https://github.com/romkatv/powerlevel10k.git"
-  depth = 1
-{{ end }}
