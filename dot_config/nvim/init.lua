@@ -35,10 +35,10 @@ require("lazy").setup(
     "tpope/vim-rhubarb", -- GitHub
 
     {
-      "phaazon/hop.nvim",
+      "ggandor/leap.nvim",
       init = function()
-        require("hop").setup()
-      end,
+        require('leap').create_default_mappings()
+      end
     },
 
     {
@@ -122,7 +122,7 @@ keymap('n', "<Left>", "<Nop>", {})
 keymap('n', "<Right>", "<Nop>", {})
 
 keymap('i', "kj", "<Esc>:w<CR>", {}) -- kj to save, avoid ESC
-keymap('n', "S", "\"_diwP", {}) -- Stamp yanked onto word
+keymap('n', "<leader>s", "\"_diwP", {}) -- Stamp yanked onto word
 
 -- copy current file path to system clipboard
 -- noremap <silent> <leader>yp :let @+=substitute(@%, '^.*/src/[^/]\+/', '', '')<CR>
