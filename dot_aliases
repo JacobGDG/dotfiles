@@ -1,13 +1,12 @@
 # misc
 alias vim="nvim"
+alias ls="ls --color"
 alias la="ls -lAhp --color=auto"
 alias whatport="lsof -i -P | grep"
 alias vimgitdiff="vim \$(git add -N . && git diff master --name-only | xargs)"
 alias mux="tmuxinator"
 
 alias dotedit="~/.scripts/dotedit.sh start"
-
-alias k="kubectl"
 
 alias yq="~/.scripts/yaml2json.sh | jq"
 
