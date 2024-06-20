@@ -13,10 +13,56 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
   {
+    {
+      'mrjones2014/legendary.nvim',
+      priority = 10000,
+      lazy = false,
+    },
+
+
     "morhetz/gruvbox", -- theme
 
-    { "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } },
-    "christoomey/vim-tmux-navigator",
+    { 
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.6",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      init = function()
+        require('telescope').setup {
+          defaults = {
+            file_ignore_patterns = {
+              "vcr_cassettes"
+            }
+          }
+        }
+      end,
+      keys = {
+        {
+          '<leader>o',
+          function()
+            require('telescope.builtin').find_files()
+          end,
+          mode = { 'n' },
+          desc = "Find file",
+        },
+        {
+          '<leader>f',
+          function()
+            require('telescope.builtin').live_grep()
+          end,
+          mode = { 'n' },
+          desc = "Find string",
+        },
+        {
+          '<leader>b',
+          function()
+            require('telescope.builtin').buffers()
+          end,
+          mode = { 'n' },
+          desc = "Find buffer",
+        },
+      }
+    },
+
     "tpope/vim-vinegar", -- netrw QoL
 
     { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" } }, -- Autocomplete
@@ -32,7 +78,17 @@ require("lazy").setup(
     }, -- LSP
 
     "tpope/vim-fugitive", -- git
-    "tpope/vim-rhubarb", -- GitHub
+    {
+      "tpope/vim-rhubarb",
+      keys = {
+        {
+          '<leader>g',
+          '<cmd>:GBrowse<CR>',
+          mode = { 'n' },
+          desc = "Open file in Github"
+        }
+      }
+    },
 
     {
       "ggandor/leap.nvim",
@@ -78,6 +134,12 @@ require("lazy").setup(
         require("copilot_cmp").setup()
       end
     },
+
+    -- TMUX navigation
+    'mrjones2014/smart-splits.nvim',
+
+
+    'kwkarlwang/bufresize.nvim',
   },
   {}
   )
@@ -115,14 +177,3 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter"}, {
 vim.opt.showcmd = true
 vim.opt.wildmode = longest,list
 
-local keymap = vim.api.nvim_set_keymap
-keymap('n', "<Up>", "<Nop>", {})
-keymap('n', "<Down>", "<Nop>", {})
-keymap('n', "<Left>", "<Nop>", {})
-keymap('n', "<Right>", "<Nop>", {})
-
-keymap('i', "kj", "<Esc>:w<CR>", {}) -- kj to save, avoid ESC
-keymap('n', "<leader>s", "\"_diwP", {}) -- Stamp yanked onto word
-
--- copy current file path to system clipboard
--- noremap <silent> <leader>yp :let @+=substitute(@%, '^.*/src/[^/]\+/', '', '')<CR>
