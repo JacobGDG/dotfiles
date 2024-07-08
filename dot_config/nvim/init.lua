@@ -63,7 +63,20 @@ require("lazy").setup(
       }
     },
 
-    "tpope/vim-vinegar", -- netrw QoL
+    -- ntrw but a buffer
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      keys = {
+        {
+          '-',
+          '<CMD>Oil<CR>',
+          mode = 'n',
+          desc = "Open parent directory",
+        }
+      }
+    },
 
     { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" } }, -- Autocomplete
     { 
