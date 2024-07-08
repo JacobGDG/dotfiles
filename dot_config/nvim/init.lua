@@ -134,6 +134,17 @@ require("lazy").setup(
         require("copilot_cmp").setup()
       end
     },
+    {
+      "CopilotC-Nvim/CopilotChat.nvim",
+      branch = "canary",
+      dependencies = {
+        { "zbirenbaum/copilot.lua" },
+        { "nvim-lua/plenary.nvim" },
+      },
+      opts = {
+      	-- debug = true,
+      },
+    },
 
     -- TMUX navigation
     'mrjones2014/smart-splits.nvim',
