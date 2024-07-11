@@ -14,19 +14,23 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
   {
     {
-      'mrjones2014/legendary.nvim',
+      "morhetz/gruvbox", -- theme
+      lazy = false,
       priority = 10000,
+    },
+
+    {
+      'mrjones2014/legendary.nvim',
+      priority = 9999,
       lazy = false,
     },
 
-
-    "morhetz/gruvbox", -- theme
 
     { 
       "nvim-telescope/telescope.nvim",
       tag = "0.1.6",
       dependencies = { "nvim-lua/plenary.nvim" },
-      init = function()
+      config = function()
         require('telescope').setup {
           defaults = {
             file_ignore_patterns = {
@@ -63,11 +67,18 @@ require("lazy").setup(
       }
     },
 
-    -- ntrw but a buffer
+    -- netrw but a buffer
     {
       'stevearc/oil.nvim',
-      opts = {},
       dependencies = { "nvim-tree/nvim-web-devicons" },
+      config = function()
+        require('oil').setup {
+          skip_confirm_for_simple_edits = false,
+          view_options = {
+            show_hidden = true
+          }
+        }
+      end,
       keys = {
         {
           '-',
@@ -82,7 +93,7 @@ require("lazy").setup(
     { 
       "williamboman/mason.nvim",
       dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
-      init = function()
+      config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
           ensure_installed = { "tflint" },
@@ -105,13 +116,14 @@ require("lazy").setup(
 
     {
       "ggandor/leap.nvim",
-      init = function()
+      config = function()
         require('leap').create_default_mappings()
       end
     },
 
     {
       "nvim-lualine/lualine.nvim",
+      lazy = false,
       init = function()
         require("lualine").setup {
           options = { theme = "gruvbox" }
