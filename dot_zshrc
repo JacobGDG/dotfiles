@@ -85,6 +85,10 @@ if command -v chezmoi 1>/dev/null 2>&1; then
   source <(chezmoi completion zsh)
 fi
 
+if command  -v direnv 1>/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi 
+
 # source $HOME/.scripts/completion.sh
 
 if command -v fzf 1>/dev/null 2>&1; then
