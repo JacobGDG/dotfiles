@@ -1,0 +1,15 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" }}
+if ! command -v brew &> /dev/null
+then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew install neovim ripgrep tmux font-hack-nerd-font zsh gnupg tmuxinator direnv
+
+{{ else }}
+
+echo "NOOP"
+
+{{ end }}
