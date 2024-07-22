@@ -1,8 +1,11 @@
-{{- $lastpassemail := promptStringOnce . "lastpassemail" "What is your LastPass email?" -}}
 {{- $p10k := promptBoolOnce . "p10k" "Want to use Powerlevel10k theme? [y,t,n,f]" -}}
 {{- $homevpn := promptBoolOnce . "homevpn" "Want to vpn into your home network [y,t,n,f]" -}}
 
 [data]
-  lastpass_email = {{ $lastpassemail | quote }}
   has_p10k = {{ $p10k }}
   home_vpn = {{ $homevpn }}
+
+encryption = "age"
+[age]
+    identity = "{{- .chezmoi.sourceDir -}}/.key.txt"
+    recipient = "age1jd95grnlklj6quqfdjalu6g47ggljjth8saj5f8muyxm27uer3eqm2cacj"

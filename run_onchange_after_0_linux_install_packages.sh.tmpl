@@ -9,26 +9,6 @@
   echo "INSTALLING BASICS"
   sudo apt install neovim ripgrep zsh tmux git -y
 
-  echo "INSTALLING LPASS"
-
-  sudo apt --no-install-recommends -yqq install \
-    bash-completion \
-    build-essential \
-    cmake \
-    libcurl4  \
-    libcurl4-openssl-dev  \
-    libssl-dev  \
-    libxml2 \
-    libxml2-dev  \
-    pkg-config \
-    ca-certificates \
-    xclip
-
-  cd ~/ext_src/lastpass-cli
-  sudo make install
-
-  cd ~
-
   {{ if .home_vpn }}
 
     echo "INSTALLING WIREGUARD"

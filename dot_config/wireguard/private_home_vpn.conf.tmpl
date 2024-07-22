@@ -1,3 +1,3 @@
 {{- if .home_vpn -}}
-{{- (index (lastpassRaw "HomeWireguard") 0).note -}}
+{{- join .chezmoi.sourceDir ".secret.wireguard.age" | include | decrypt -}}
 {{- end -}}

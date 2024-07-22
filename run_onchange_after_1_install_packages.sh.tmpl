@@ -4,9 +4,3 @@ echo "NVIM INSTALL"
 if ! command -v nvm; then
   PROFILE=/dev/null NODE_VERSION=17 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 fi
-
-
-echo "LPASS LOGIN"
-if ! lpass status; then
-  lpass login --trust {{ .lastpass_email }}
-fi

@@ -33,6 +33,6 @@
   alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 [user]
   name = JacobGDG
-  email = {{ (index (lastpass "Gmail") 0).username }}
+  email = {{ join .chezmoi.sourceDir ".secret.gmail.age" | include | decrypt }}
 [pull]
   rebase = false

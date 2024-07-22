@@ -65,9 +65,12 @@ export PATH="$HOME/.scripts:$PATH"
 export PATH="$HOME/ext_src/nvim/nvim-linux64/bin/:$PATH"
 
 [ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
+
 [ -f "$HOME/.aliases" ] && source $HOME/.aliases
 [ -f "$HOME/.aliases.local" ] && source $HOME/.aliases.local || touch $HOME/.aliases.local
-[ -f "$HOME/.zshenv" ] && source $HOME/.zshenv || touch $HOME/.zshenv
+
+[ -f "$HOME/.zshenv" ] && source $HOME/.zshenv
+[ -f "$HOME/.zshenv.private" ] && source $HOME/.zshenv.private
 [ -f "$HOME/.zshenv.local" ] && source $HOME/.zshenv.local || touch $HOME/.zshenv.local
 
 if command -v pyenv 1>/dev/null 2>&1; then
