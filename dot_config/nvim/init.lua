@@ -101,19 +101,12 @@ require("lazy").setup(
       end
     }, -- LSP
 
-    "tpope/vim-fugitive", -- git
     {
-      "tpope/vim-rhubarb",
-      keys = {
-        {
-          '<leader>g',
-          '<cmd>:GBrowse<CR>',
-          mode = { 'n' },
-          desc = "Open file in Github"
-        }
-      }
+      "lewis6991/gitsigns.nvim",
+      config = function()
+        require('gitsigns').setup()
+      end
     },
-
     {
       "ggandor/leap.nvim",
       config = function()
