@@ -14,6 +14,12 @@
   # new branch to push
   upstream = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 
+  # default branch
+  default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+
+  # checkout deafult branch
+  home = "!f(){ git checkout $(git default-branch) $@;}; f"
+
   # oops
   amend = commit --amend -C HEAD
   p-force = push --force-with-lease
