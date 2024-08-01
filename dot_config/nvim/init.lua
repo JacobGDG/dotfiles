@@ -76,7 +76,16 @@ require("lazy").setup(
           skip_confirm_for_simple_edits = false,
           view_options = {
             show_hidden = true
-          }
+          },
+
+          use_default_keymaps = false,
+          keymaps = {
+            ["g?"] = "actions.show_help",
+            ["<CR>"] = "actions.select",
+            ["-"] = "actions.parent",
+            ["_"] = "actions.open_cwd",
+            ["g."] = "actions.toggle_hidden",
+          },
         }
       end,
       keys = {
