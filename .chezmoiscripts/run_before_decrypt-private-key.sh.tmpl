@@ -4,4 +4,6 @@ if [ ! -f "{{- .chezmoi.sourceDir -}}/.key.txt" ]; then
     mkdir -p "{{- .chezmoi.sourceDir -}}"
     chezmoi age decrypt --output "{{- .chezmoi.sourceDir -}}/.key.txt" --passphrase "{{- .chezmoi.sourceDir -}}/.key.txt.age"
     chmod 600 "{{- .chezmoi.sourceDir -}}/.key.txt"
+
+    ( sleep 600 && rm "{{- .chezmoi.sourceDir -}}/.key.txt" ) &
 fi
