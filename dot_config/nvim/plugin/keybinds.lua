@@ -4,15 +4,6 @@ require('legendary').setup({
   },
 
   keymaps = {
-    { 
-      '?', 
-      ':help netrw-quickmap<CR>',
-      description = 'Show help',
-      filters = {
-        ft = 'netrw'
-      },
-      mode = { 'n' }
-    },
     {
       'kj',
       { i = '<ESC>:w<CR>' },

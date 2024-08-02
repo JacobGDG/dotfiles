@@ -64,6 +64,14 @@ require("lazy").setup(
           mode = { 'n' },
           desc = "Find buffer",
         },
+        {
+          '<leader>h',
+          function()
+            require('telescope.builtin').help_tags()
+          end,
+          mode = { 'n' },
+          desc = "Get help!",
+        },
       }
     },
 
