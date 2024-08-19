@@ -93,6 +93,7 @@ require("lazy").setup(
             ["-"] = "actions.parent",
             ["_"] = "actions.open_cwd",
             ["g."] = "actions.toggle_hidden",
+            ["<leader>l"] = "actions.refresh",
           },
         }
       end,

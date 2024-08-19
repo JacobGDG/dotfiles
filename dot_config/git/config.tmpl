@@ -11,9 +11,6 @@
   rbm = pull origin master --rebase
   cm-temp = commit -m 'temp commit'
 
-  # new branch to push
-  upstream = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-
   # default branch
   default-branch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
 
@@ -44,3 +41,5 @@
   email = {{ join .chezmoi.sourceDir ".secret.gmail.age" | include | decrypt }}
 [pull]
   rebase = false
+[push]
+  autoSetupRemote = true
