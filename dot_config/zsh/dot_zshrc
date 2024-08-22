@@ -55,8 +55,6 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 
-export EDITOR=nvim
-
 bindkey -e
 bindkey '^ ' autosuggest-accept
 
@@ -66,12 +64,11 @@ export PATH="$HOME/ext_src/nvim/nvim-linux64/bin/:$PATH"
 
 [ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
 
-[ -f "$HOME/.aliases" ] && source $HOME/.aliases
-[ -f "$HOME/.aliases.local" ] && source $HOME/.aliases.local || touch $HOME/.aliases.local
+[ -f "$XDG_CONFIG_HOME/zsh/.aliases" ] && source $XDG_CONFIG_HOME/zsh/.aliases
+[ -f "$XDG_CONFIG_HOME/zsh/.aliases.local" ] && source $XDG_CONFIG_HOME/zsh/.aliases.local || touch $XDG_CONFIG_HOME/zsh/.aliases.local
 
-[ -f "$HOME/.zshenv" ] && source $HOME/.zshenv
-[ -f "$HOME/.zshenv.private" ] && source $HOME/.zshenv.private
-[ -f "$HOME/.zshenv.local" ] && source $HOME/.zshenv.local || touch $HOME/.zshenv.local
+[ -f "$XDG_CONFIG_HOME/zsh/zshenv.private" ] && source $XDG_CONFIG_HOME/zsh/zshenv.private
+[ -f "$XDG_CONFIG_HOME/zsh/zshenv.local" ] && source $XDG_CONFIG_HOME/zsh/zshenv.local || touch $XDG_CONFIG_HOME/zsh/zshenv.local
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
