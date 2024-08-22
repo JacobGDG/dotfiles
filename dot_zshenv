@@ -5,3 +5,4 @@ export EDITOR=nvim
 
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TMUXINATOR_CONFIG=$XDG_CONFIG_HOME/tmuxinator
+export POWERLEVEL9K_CONFIG_FILE=$XDG_CONFIG_HOME/zsh/.p10k.zsh
