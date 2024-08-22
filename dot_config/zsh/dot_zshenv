@@ -1,6 +1,0 @@
-export XDG_CONFIG_HOME="$HOME/.config"
-export EDITOR="nvim"
-export ZDOTDIR="$HOME/.config/zsh"
-
-export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
-export TMUXINATOR_CONFIG=$HOME/.config/tmuxinator
