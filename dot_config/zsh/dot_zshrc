@@ -67,8 +67,8 @@ export PATH="$HOME/ext_src/nvim/nvim-linux64/bin/:$PATH"
 [ -f "$XDG_CONFIG_HOME/zsh/.aliases" ] && source $XDG_CONFIG_HOME/zsh/.aliases
 [ -f "$XDG_CONFIG_HOME/zsh/.aliases.local" ] && source $XDG_CONFIG_HOME/zsh/.aliases.local || touch $XDG_CONFIG_HOME/zsh/.aliases.local
 
-[ -f "$XDG_CONFIG_HOME/zsh/zshenv.private" ] && source $XDG_CONFIG_HOME/zsh/zshenv.private
-[ -f "$XDG_CONFIG_HOME/zsh/zshenv.local" ] && source $XDG_CONFIG_HOME/zsh/zshenv.local || touch $XDG_CONFIG_HOME/zsh/zshenv.local
+[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.private" ] && source $XDG_CONFIG_HOME/zsh/.zshenv.private
+[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ] && source $XDG_CONFIG_HOME/zsh/.zshenv.local || touch $XDG_CONFIG_HOME/zsh/.zshenv.local
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
