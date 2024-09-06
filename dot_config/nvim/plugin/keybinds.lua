@@ -33,6 +33,6 @@ require('legendary').setup({
       '<Right>',
       { n = '<Nop>' },
       hide = true,
-    },
+    }
   }
 })
