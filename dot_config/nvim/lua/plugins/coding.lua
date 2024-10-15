@@ -1,5 +1,5 @@
 return {
-  { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" } }, -- Autocomplete
+  -- LSP
 
   { 
     "williamboman/mason.nvim",
@@ -7,20 +7,23 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "tflint" },
-      })
+          ensure_installed = { "tflint" },
+        })
     end
   }, -- LSP
 
+  -- AUTO COMPLETE
+
+  { "hrsh7th/nvim-cmp", dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" } }, -- Autocomplete
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+        })
     end
   },
 
