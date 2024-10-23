@@ -1,5 +1,4 @@
 return {
-  "sheerun/vim-polyglot", -- syntax highlighting
   "nvim-tree/nvim-web-devicons",
   'kwkarlwang/bufresize.nvim',
 
