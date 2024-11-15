@@ -8,9 +8,11 @@ return {
       configs.setup({
           highlight = { enable = true },
           indent = { enable = true },
+          with_sync = true,
           ensure_installed = {
             "bash",
             "diff",
+            "hcl",
             "javascript",
             "jsdoc",
             "json",

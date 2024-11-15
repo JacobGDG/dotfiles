@@ -75,6 +75,13 @@ return {
           ["_"] = "actions.open_cwd",
           ["g."] = "actions.toggle_hidden",
           ["<leader>l"] = "actions.refresh",
+          ['yp'] = {
+              desc = 'Copy filepath to system clipboard',
+              callback = function ()
+                  require('oil.actions').copy_entry_path.callback()
+                  vim.fn.setreg("+", vim.fn.getreg(vim.v.register))
+              end,
+          },
         },
       }
     end,
