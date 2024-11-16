@@ -5,56 +5,14 @@ return {
     'mrjones2014/legendary.nvim',
     priority = 9999,
     lazy = false,
-  },
-
-  { 
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require('telescope').setup {
-        defaults = {
-          file_ignore_patterns = {
-            "vcr_cassettes"
-          }
-        }
-      }
-      require("telescope").load_extension("yank_history")
-    end,
     keys = {
-      {
-        '<leader>o',
-        function()
-          require('telescope.builtin').find_files()
-        end,
-        mode = { 'n' },
-        desc = "Find file",
-      },
-      {
-        '<leader>f',
-        function()
-          require('telescope.builtin').live_grep()
-        end,
-        mode = { 'n' },
-        desc = "Find string",
-      },
-      {
-        '<leader>b',
-        function()
-          require('telescope.builtin').buffers()
-        end,
-        mode = { 'n' },
-        desc = "Find buffer",
-      },
-      {
-        '<leader>h',
-        function()
-          require('telescope.builtin').help_tags()
-        end,
-        mode = { 'n' },
-        desc = "Get help!",
-      },
-    }
+      { "<leader>k", ":Legendary keymaps<CR>", mode = { "n" }, desc = "List keymaps" },
+    },
+    config = function()
+      require('legendary').setup({
+        extensions = { lazy_nvim = true }
+      })
+    end
   },
 
   -- netrw but a buffer
