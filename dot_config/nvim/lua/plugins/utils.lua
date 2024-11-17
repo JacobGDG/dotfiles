@@ -1,20 +1,6 @@
 return {
   'mrjones2014/smart-splits.nvim',
 
-  { -- keybindings
-    'mrjones2014/legendary.nvim',
-    priority = 9999,
-    lazy = false,
-    keys = {
-      { "<leader>k", ":Legendary keymaps<CR>", mode = { "n" }, desc = "List keymaps" },
-    },
-    config = function()
-      require('legendary').setup({
-        extensions = { lazy_nvim = true }
-      })
-    end
-  },
-
   -- netrw but a buffer
   {
     'stevearc/oil.nvim',

@@ -1,27 +1,30 @@
 return {
-  "nvim-tree/nvim-web-devicons",
   'kwkarlwang/bufresize.nvim',
-
-  {
-    "morhetz/gruvbox", -- theme
-    lazy = false,
-    priority = 10000,
-  },
 
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,
+    depends = { 'nvim-tree/nvim-web-devicons' },
     init = function()
       require("lualine").setup {
-        options = { theme = "gruvbox" }
+        extensions = { 'oil' },
       }
     end
   },
 
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+  }
 }
