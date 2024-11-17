@@ -45,4 +45,3 @@ vim.api.nvim_create_autocmd({"BufLeave", "FocusLost", "InsertEnter"}, {
 
 vim.opt.showcmd = true
 vim.opt.wildmode = longest,list
-

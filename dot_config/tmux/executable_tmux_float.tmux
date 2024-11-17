@@ -17,4 +17,3 @@ if [[ $SESSION_NAME == *"-popup" ]]; then
 fi
 
 tmux display-popup -E "tmux new-session -A -s \"$SESSION_NAME-popup\""
-

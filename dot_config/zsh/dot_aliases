@@ -23,5 +23,3 @@ if ! command -v pbpaste &> /dev/null
 then
     alias pbpaste="xclip -selection clipboard -o"
 fi
-
-

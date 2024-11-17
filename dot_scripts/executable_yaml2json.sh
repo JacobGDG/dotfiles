@@ -10,10 +10,9 @@ fi
 
 # same for python
 if command -v python &> /dev/null; then
-  python -c 'import sys, yaml, json; json.dump(yaml.safe_load(sys.stdin), sys.stdout, indent=4)' 
+  python -c 'import sys, yaml, json; json.dump(yaml.safe_load(sys.stdin), sys.stdout, indent=4)'
   exit 0
 fi
 
 echo "No ruby or python found. Exiting..."
 exit 1
-
