@@ -4,7 +4,6 @@ return {
     priority = 9999,
     lazy = false,
     keys = {
-      { "<leader>k",   ":Legendary keymaps<CR>", mode = "n", desc = "Find keymaps" },
       { "kj",          "<ESC>:w<CR>",            mode = "i", desc = "Save file without ESC" },
       { "<leader>s",   "\"_diwP",                mode = "n", desc = "Stamp default register onto word" },
       { "<Up>",        "<Nop>",                  mode = "n", silent = true },
@@ -16,7 +15,7 @@ return {
       require('legendary').setup({
         extensions = {
           lazy_nvim = true,
-          smart_splits = true
+          smart_splits = {}
         }
       })
     end

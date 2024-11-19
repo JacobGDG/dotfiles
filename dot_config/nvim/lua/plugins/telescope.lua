@@ -71,6 +71,7 @@ return {
         mode = { 'n' },
         desc = "Get help!",
       },
+      { "<leader>k",   ":Legendary keymaps<CR>", mode = "n", desc = "Find keymaps" },
     }
   },
 
