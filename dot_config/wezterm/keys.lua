@@ -11,9 +11,20 @@ function M.setup(config)
   config.disable_default_key_bindings = true
   config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
   config.keys = {
-    { mods = "LEADER", key = "h", action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
-    { mods = "LEADER", key = "g", action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 
+    { mods = 'CTRL|SHIFT', key = 'v', action = act.PasteFrom 'Clipboard' },
+
+
+    { mods = 'CTRL|SHIFT', key = 'l', action = act.ClearScrollback 'ScrollbackAndViewport' },
+    -- VIM MODE
+    {  mods = 'LEADER', key = 'Enter', action = act.ActivateCopyMode },
+    {  mods = 'LEADER', key = 'Space', action = act.QuickSelect },
+
+    -- PANES
+    { mods = "LEADER", key = "h", action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { mods = "LEADER", key = "g", action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+
+    { mods = 'LEADER', key = 'z', action = act.TogglePaneZoomState },
 
     M.split_nav("resize", "CTRL", "LeftArrow", "Right"),
     M.split_nav("resize", "CTRL", "RightArrow", "Left"),
@@ -23,6 +34,16 @@ function M.setup(config)
     M.split_nav("move", "CTRL", "j", "Down"),
     M.split_nav("move", "CTRL", "k", "Up"),
     M.split_nav("move", "CTRL", "l", "Right"),
+
+    -- TABS
+    { mods = 'LEADER', key = 'c', action = act.SpawnTab 'CurrentPaneDomain' },
+    { key = 'n', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(1) },
+    { key = 'p', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = 'w', mods = 'LEADER', action = act.ShowTabNavigator },
+    { mods = 'LEADER|CTRL', key = 'd', action = act.CloseCurrentTab{ confirm = true } },
+
+    -- WORKSPACES
+    { mods = 'LEADER', key = 's', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
   }
 end
 
@@ -60,7 +81,7 @@ function M.split_nav(resize_or_move, mods, key, dir)
   return {
     key = key,
     mods = mods,
-    action = wezterm.action.EmitEvent(event),
+    action = act.EmitEvent(event),
   }
 end
 
