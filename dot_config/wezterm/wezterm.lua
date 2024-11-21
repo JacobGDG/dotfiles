@@ -14,11 +14,12 @@ config.font = wezterm.font("Hack Nerd Font Mono")
 
 config.scrollback_lines = 10000
 
-config.hide_tab_bar_if_only_one_tab = true
+config.audible_bell = "Disabled"
+
+-- config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.tab_max_width = 32
 
--- config.default_prog = { "tmux" }
 config.default_workspace = "home"
 
 return config

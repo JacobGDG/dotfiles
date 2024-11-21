@@ -23,3 +23,9 @@ if ! command -v pbpaste &> /dev/null
 then
     alias pbpaste="xclip -selection clipboard -o"
 fi
+
+
+if command -v firefox &> /dev/null
+then
+    alias ff="firefox"
+fi
