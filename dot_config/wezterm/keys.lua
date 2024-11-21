@@ -40,7 +40,6 @@ function M.setup(config)
     { key = 'n', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(1) },
     { key = 'p', mods = 'LEADER', action = wezterm.action.ActivateTabRelative(-1) },
     { key = 'w', mods = 'LEADER', action = act.ShowTabNavigator },
-    { mods = 'LEADER|CTRL', key = 'd', action = act.CloseCurrentTab{ confirm = true } },
 
     -- WORKSPACES
     { mods = 'LEADER', key = 's', action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
